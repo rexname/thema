@@ -9,7 +9,7 @@ if ($variant === 'adventure') {
 }
 
 $main_q = new WP_Query([
-  'posts_per_page' => 7,
+  'posts_per_page' => 9,
   'ignore_sticky_posts' => true,
 ]);
 
