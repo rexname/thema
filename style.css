@@ -8,11 +8,13 @@ Text Domain: thema
 */
 
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";color:#111;background:#fff}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:var(--bg)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 
 :root{--max:1200px;--gap:24px;--gap-sm:12px;--border:#d9d9d9;--muted:#666;--accent:#0a66c2}
+/* Palette upgrade */
+:root{--ink:#0b1320;--ink-2:#1f2a44;--ink-3:#5b6b88;--bg:#ffffff;--bg-soft:#f7f8fa;--primary:#0a66c2;--primary-600:#0959a8;--primary-700:#084d91;--warn:#ffcc00}
 
 .container{max-width:var(--max);margin:0 auto;padding:0 16px}
 .grid{display:grid;gap:var(--gap)}
@@ -47,7 +49,15 @@ img{display:block;max-width:100%;height:auto}
 .leading-tight{line-height:1.25}
 
 .site-header{border-bottom:1px solid var(--border)}
-.brand{font-size:2rem;font-weight:700}
+.topbar{background:var(--bg-soft);border-bottom:1px solid var(--border)}
+.topbar .mini{font-size:.85rem;color:var(--ink-3)}
+.brand{font-size:2rem;font-weight:800;letter-spacing:.02em}
+.brand:hover{color:var(--primary)}
+.main-nav a{display:block;padding:12px 14px;border-radius:6px}
+.main-nav a:hover{color:#fff;background:var(--primary)}
+.cta{padding:8px 12px;background:var(--primary);color:#fff;border-radius:6px}
+.cta:hover{background:var(--primary-600)}
+.main-nav .current-menu-item a{background:var(--primary-700);color:#fff}
 .main-nav ul{list-style:none;margin:0;padding:0}
 .main-nav li{display:inline-block}
 .main-nav a{display:block;padding:12px 14px}
@@ -55,32 +65,43 @@ img{display:block;max-width:100%;height:auto}
 
 .hero{display:grid;grid-template-columns:1fr;gap:var(--gap)}
 .hero-card{display:grid;grid-template-columns:1fr;gap:12px}
-.hero-card .title{font-size:1.8rem;line-height:1.2}
+.hero-card .title{font-size:2rem;line-height:1.15}
 .hero-card .meta{font-size:.8rem;color:var(--muted)}
+.hero-card img{border:1px solid var(--border)}
 
 .sidebar{display:flex;flex-direction:column;gap:12px}
 .list-plain{list-style:none;margin:0;padding:0}
 .list-plain li{border-bottom:1px solid var(--border);padding:10px 0}
 .list-plain li:last-child{border-bottom:0}
 
-.card{display:grid;grid-template-columns:1fr;gap:8px;border-top:1px solid var(--border);padding-top:8px}
+.card{display:grid;grid-template-columns:1fr;gap:10px;border-top:1px solid var(--border);padding-top:10px}
+.card h3 a{color:var(--ink)}
+.card h3 a:hover{color:var(--primary)}
+.card img{border:1px solid var(--border)}
 .label{display:inline-block;font-size:.72rem;padding:2px 6px;border:1px solid #000;font-weight:700}
 .excerpt{color:var(--muted)}
+.excerpt, .content p{ text-align: justify; text-justify: inter-word }
 
 .section{margin-top:24px}
-.section-header{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:16px}
+.section-header{display:flex;align-items:center;justify-content:space-between;border-top:2px solid #000;border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:16px}
 .section-title{font-size:1rem;font-weight:700;letter-spacing:.02em}
 .more-link{font-size:.85rem;color:var(--accent)}
+.more-link:hover{color:var(--primary)}
 
 .grid-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
 .grid-posts .card{border:0}
 
-.newsletter{border:1px solid var(--border);padding:16px;margin-top:24px}
+.newsletter{border:1px solid var(--border);padding:16px;margin-top:24px;background:var(--bg-soft)}
 .newsletter .controls{display:flex;gap:8px;margin-top:8px}
 .newsletter input{flex:1;padding:10px;border:1px solid var(--border)}
-.newsletter button{padding:10px 14px;background:#111;color:#fff;border:0}
+.newsletter button{padding:10px 14px;background:var(--ink);color:#fff;border:0;border-radius:6px}
+.newsletter button:hover{background:var(--ink-2)}
 
-.site-footer{border-top:1px solid var(--border);padding:24px 0;margin-top:24px;color:var(--muted)}
+.list-plain li a{color:var(--ink)}
+.list-plain li a:hover{color:var(--primary)}
+.list-plain li .text-xs{margin-top:4px}
+
+.site-footer{border-top:1px solid var(--border);padding:24px 0;margin-top:24px;color:var(--muted);background:var(--bg-soft)}
 
 @media (max-width:1024px){
   .cols-2{grid-template-columns:1fr}

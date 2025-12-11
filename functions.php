@@ -15,6 +15,11 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\assets');
 function assets() {
     $ver = wp_get_theme()->get('Version');
     wp_enqueue_style('thema-style', get_stylesheet_uri(), [], $ver);
+    $variant = get_theme_mod('thema_variant', 'default');
+    if ($variant !== 'default') {
+        $variant_css = get_stylesheet_directory_uri() . '/variants/' . $variant . '.css';
+        wp_enqueue_style('thema-variant', $variant_css, ['thema-style'], $ver);
+    }
 }
 
 function get_cat_id_by_slug($slug) {
@@ -38,3 +43,4 @@ function render_post_card($post) {
     wp_reset_postdata();
 }
 
+require_once get_stylesheet_directory() . '/inc/customizer.php';
