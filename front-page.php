@@ -18,7 +18,7 @@ $main_q = new WP_Query([
   <div>
     <?php if ($main_q->have_posts()): $main_q->the_post(); ?>
       <article class="hero-card">
-        <?php if (has_post_thumbnail()) the_post_thumbnail('large'); ?>
+        <?php if (has_post_thumbnail()) { echo '<a href="' . esc_url(get_permalink()) . '">'; the_post_thumbnail('large'); echo '</a>'; } ?>
         <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="excerpt text-sm muted"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) ); ?></div>
         <div class="meta text-xs muted"><?php echo esc_html( get_the_date() ); ?> · <?php echo esc_html( get_the_author() ); ?></div>
@@ -28,20 +28,11 @@ $main_q = new WP_Query([
     <div class="grid grid-sm grid-posts mt-6">
       <?php while ($main_q->have_posts()): $main_q->the_post(); ?>
         <article class="card">
-          <?php if (has_post_thumbnail()) the_post_thumbnail('medium'); ?>
+          <?php if (has_post_thumbnail()) { echo '<a href="' . esc_url(get_permalink()) . '">'; the_post_thumbnail('medium'); echo '</a>'; } ?>
           <h3 class="text-lg leading-tight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <div class="meta text-xs muted"><?php echo esc_html( get_the_date() ); ?></div>
         </article>
       <?php endwhile; wp_reset_postdata(); ?>
-    </div>
-
-    <div class="newsletter">
-      <div class="text-lg bold"><?php echo esc_html__( 'TMT Weekly Newsletter', 'thema' ); ?></div>
-      <div class="muted text-sm"><?php echo esc_html__( 'Get our big stories in your inbox.', 'thema' ); ?></div>
-      <form class="controls" method="post" action="#">
-        <input type="email" name="email" placeholder="<?php echo esc_attr__( 'Your email', 'thema' ); ?>" required>
-        <button type="submit"><?php echo esc_html__( 'Subscribe', 'thema' ); ?></button>
-      </form>
     </div>
   </div>
   <aside class="sidebar">
@@ -69,7 +60,7 @@ $main_q = new WP_Query([
         <div class="grid grid-sm" style="grid-template-columns:1fr;gap:16px">
           <?php while ($pick_q->have_posts()): $pick_q->the_post(); ?>
             <article class="card">
-              <?php if (has_post_thumbnail()) the_post_thumbnail('medium'); ?>
+              <?php if (has_post_thumbnail()) { echo '<a href="' . esc_url(get_permalink()) . '">'; the_post_thumbnail('medium'); echo '</a>'; } ?>
               <h3 class="text-lg"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
               <div class="text-xs muted"><?php echo esc_html( get_the_date() ); ?></div>
             </article>
@@ -99,7 +90,7 @@ function section_grid_dynamic($index, $fallback_title, $fallback_slug) {
   echo '<div class="grid-posts">';
   while ($q->have_posts()): $q->the_post();
     echo '<article class="card">';
-    if (has_post_thumbnail()) the_post_thumbnail('medium');
+    if (has_post_thumbnail()) echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(null, 'medium') . '</a>';
     echo '<h3 class="text-lg leading-tight"><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3>';
     echo '<div class="text-xs muted">' . esc_html(get_the_date()) . '</div>';
     echo '</article>';

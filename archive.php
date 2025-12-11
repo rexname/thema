@@ -9,7 +9,7 @@ get_header();
 
   <?php
   $paged = get_query_var('paged') ? (int) get_query_var('paged') : 1;
-  $per   = (int) get_theme_mod('thema_home_posts_per_section', 9);
+  $per   = 16;
   $args  = [
     'posts_per_page' => $per,
     'paged' => $paged,
@@ -21,10 +21,10 @@ get_header();
   $loop = new WP_Query($args);
   ?>
 
-  <div class="grid-posts">
+  <div class="grid-posts" style="grid-template-columns:repeat(4,1fr)">
     <?php if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post(); ?>
       <article class="card">
-        <?php if (has_post_thumbnail()) the_post_thumbnail('medium'); ?>
+        <?php if (has_post_thumbnail()) { echo '<a href="' . esc_url(get_permalink()) . '">'; the_post_thumbnail('medium'); echo '</a>'; } ?>
         <h3 class="text-lg leading-tight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <div class="text-xs muted"><?php echo esc_html( get_the_date() ); ?></div>
       </article>
