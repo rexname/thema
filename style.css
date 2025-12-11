@@ -91,6 +91,7 @@ picture,img{aspect-ratio:auto}
 .more-link:hover{color:var(--primary)}
 
 .grid-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-posts .card{border:0}
 
 .newsletter{border:1px solid var(--border);padding:16px;margin-top:24px;background:var(--bg-soft)}

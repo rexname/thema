@@ -25,7 +25,7 @@ $main_q = new WP_Query([
       </article>
     <?php endif; ?>
 
-    <div class="grid grid-sm grid-posts mt-6">
+    <div class="grid grid-sm grid-posts grid-2 mt-6">
       <?php while ($main_q->have_posts()): $main_q->the_post(); ?>
         <article class="card">
           <?php if (has_post_thumbnail()) { echo '<a href="' . esc_url(get_permalink()) . '">'; the_post_thumbnail('medium'); echo '</a>'; } ?>
@@ -87,7 +87,7 @@ function section_grid_dynamic($index, $fallback_title, $fallback_slug) {
   echo '<div class="section-header"><div class="section-title">' . esc_html($title) . '</div>';
   if ($cat_id) echo '<a class="more-link" href="' . esc_url(get_category_link($cat_id)) . '">' . esc_html__('More', 'thema') . ' ' . esc_html($title) . '</a>';
   echo '</div>';
-  echo '<div class="grid-posts">';
+  echo '<div class="grid-posts grid-2">';
   while ($q->have_posts()): $q->the_post();
     echo '<article class="card">';
     if (has_post_thumbnail()) echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(null, 'medium') . '</a>';
