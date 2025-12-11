@@ -7,14 +7,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="topbar">
-  <div class="container p-2">
-    <div class="flex items-center justify-between">
-      <div class="mini"><?php echo esc_html__( 'Independent News', 'thema' ); ?></div>
-      <a class="cta" href="#"><?php echo esc_html__( 'Subscribe', 'thema' ); ?></a>
-    </div>
-  </div>
-</div>
+<?php $variant = get_theme_mod('thema_variant','newspaper'); if ($variant==='adventure'){ get_template_part('template-parts/header/header','adventure'); } else { ?>
 <header class="site-header">
   <div class="container p-4">
     <div class="flex items-center justify-between">
@@ -30,4 +23,5 @@
     </div>
   </div>
 </header>
+<?php } ?>
 <main class="container mt-6">

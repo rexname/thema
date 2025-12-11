@@ -110,3 +110,6 @@ img{display:block;max-width:100%;height:auto}
 @media (max-width:640px){
   .grid-posts{grid-template-columns:1fr}
 }
+.content{max-width:800px;margin:0 auto}
+.content img{margin:16px 0}
+.content h2,.content h3{margin:16px 0 8px}

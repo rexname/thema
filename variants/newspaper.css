@@ -1,0 +1,7 @@
+/* Newspaper variant: layout tebal bertipe surat kabar */
+.topbar{background:#fff;border-bottom:2px solid #000}
+.brand{font-family: Georgia, 'Times New Roman', serif;font-weight:700}
+.section-header{border-top:6px double #000}
+.section-title{text-transform:uppercase;letter-spacing:.06em}
+.card h3{font-weight:700}
+.grid-posts{grid-template-columns:repeat(4,1fr)}
