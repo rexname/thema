@@ -113,3 +113,20 @@ img{display:block;max-width:100%;height:auto}
 .content{max-width:800px;margin:0 auto}
 .content img{margin:16px 0}
 .content h2,.content h3{margin:16px 0 8px}
+.content ul{padding-left:20px;margin:12px 0}
+.content ol{padding-left:24px;margin:12px 0}
+.content li{margin:6px 0}
+.content blockquote{border-left:3px solid var(--border);padding-left:12px;color:var(--ink-3);margin:12px 0}
+.content pre{background:#0b13200d;border:1px solid var(--border);padding:12px;overflow:auto}
+.content code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+.content table{width:100%;border-collapse:collapse;margin:16px 0}
+.content th,.content td{border:1px solid var(--border);padding:8px;vertical-align:top}
+.content thead th{background:var(--bg-soft);font-weight:700}
+.content figure{margin:16px 0}
+.content figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
+
+.pagination{display:flex;justify-content:center;margin:20px 0}
+.page-numbers{display:flex;gap:8px;list-style:none;padding:0;margin:0}
+.page-numbers li a,.page-numbers .current{display:inline-block;padding:8px 12px;border:1px solid var(--border);border-radius:6px}
+.page-numbers li a:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.page-numbers .current{background:#000;color:#fff;border-color:#000}

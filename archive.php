@@ -31,13 +31,14 @@ get_header();
     <?php endwhile; endif; wp_reset_postdata(); ?>
   </div>
 
-  <div class="p-4">
+  <div class="pagination">
     <?php
     echo paginate_links([
       'total' => $loop->max_num_pages,
       'current' => $paged,
       'prev_text' => '&laquo;',
       'next_text' => '&raquo;',
+      'type' => 'list',
     ]);
     ?>
   </div>

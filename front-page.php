@@ -114,6 +114,4 @@ section_grid_dynamic(2, esc_html__('Business', 'thema'), 'business');
 section_grid_dynamic(3, esc_html__('Arts and Life', 'thema'), 'arts-life');
 section_grid_dynamic(4, esc_html__('The New Diaspora', 'thema'), 'new-diaspora');
 
-echo '<div class="section"><div class="section-header"><div class="section-title">' . esc_html__( 'More Features', 'thema' ) . '</div></div></div>';
-
 get_footer();
